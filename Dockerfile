@@ -19,15 +19,15 @@ curl \
 gcc \
 rpm
 
-
 RUN  cd tmp/mq \
   && ls \
   && ./mqlicense.sh -text_only -accept \
+  # You can add more components from MQ like - MQ Server, I am going for the one's I needed for my python project to run
   && rpm -ivh --force-debian MQSeriesRuntime-*.rpm MQSeriesClient-*.rpm MQSeriesSDK-*.rpm
 
-  RUN apt-get install -y software-properties-common \
-    && apt-get update \
-    && apt-get install -y python3 python3-dev \
-    && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
-    && python3 get-pip.py \
-    && pip install py3mqi
+RUN apt-get install -y software-properties-common \
+  && apt-get update \
+  && apt-get install -y python3 python3-dev \
+  && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+  && python3 get-pip.py \
+  && pip install py3mqi
