@@ -1,3 +1,5 @@
+# Get the fav base image of your choice
+
 From ubuntu:16.04
 
 # The URL to download the MQ installer from in tar.gz format
